@@ -134,7 +134,7 @@ export default function PlayersScreen({ navigation }) {
               canSetPhoto={true}/>
           )
 
-          } keyExtractor={(item, index) => { index }} />
+          } keyExtractor={(item, index) => { item.id + index }} />
 
         </View>
 
@@ -142,7 +142,7 @@ export default function PlayersScreen({ navigation }) {
           <Toast />
           <View style={styles.playerModal}>
 
-            <Field text="Nome do novo jogador" value={playerName} onChangeText={setPlayerName} />
+            <Field text="Nome do novo jogador" focus={true} value={playerName} onChangeText={setPlayerName} />
 
             <View style={[{ display: "flex", flexDirection: "row", justifyContent: "space-around" }]}>
               <Button mode="elevated" buttonColor="#4330a5" onPress={toggleModal}>
